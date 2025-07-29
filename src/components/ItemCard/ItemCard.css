@@ -1,0 +1,30 @@
+.card {
+  width: 323px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card__name {
+  position: absolute;
+  top: 15px;
+  margin: 0;
+  width: 73px;
+  height: 24px;
+  border-radius: 4px;
+  gap: 8px;
+  background: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.card__image {
+  width: 100%;
+  height: 328px;
+  border-radius: 8px;
+}
+
+/* Font sizes, padding, border radiuses, white box, etc for styling  */

@@ -1,0 +1,47 @@
+.modal__content_type_image {
+  background-color: transparent;
+  padding: 0;
+}
+
+.modal__image {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__close-btn_item {
+  border: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  right: 0px;
+}
+
+.modal__close {
+  background-color: transparent;
+}
+
+.modal__footer {
+  background: rgba(255, 255, 255, 1);
+  margin: 0;
+  width: 500px;
+}
+
+.modal__caption {
+  padding: 12px 0px 12px 32px;
+  margin: 0;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.modal__weather {
+  padding: 0px 0px 32px 32px;
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
