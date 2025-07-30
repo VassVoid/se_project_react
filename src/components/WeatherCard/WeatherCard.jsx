@@ -16,6 +16,9 @@ function WeatherCard({ weatherData }) {
     weatherOption = filteredOptions[0];
   }
 
+  console.log("Weather option:", weatherOption);
+  console.log("Image URL:", weatherOption?.url);
+
   return (
     <section className="weather-card">
       <p className="weather-card__temp">{weatherData.temp.F}° F</p>

@@ -27,4 +27,7 @@
   border-radius: 8px;
 }
 
-/* Font sizes, padding, border radiuses, white box, etc for styling  */
+.card__image:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}

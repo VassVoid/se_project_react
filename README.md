@@ -35,8 +35,24 @@ In case you are curious about more detailed picture of how our project is, we ha
 [Link to the project in Figma](https://www.figma.com/file/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR)
 
 **Images**
-[Day-sunny](/src/assets/day/clear.svg)
-[Day]
+
+Daytime Images
+[Day-clear](/src/assets/day/clear.svg)
+[Day-cloudy](src/assets/day/cloudy.png)
+[Day-default](src/assets/day/default.png)
+[Day-foggy](src/assets/day/foggy.png)
+[Day-rainy](src/assets/day/rainy.png)
+[Day-snowy](src/assets/day/snowy.png)
+[Day-stormy](src/assets/day/stormy.png)
+
+Nighttime Images
+[Night-clear](src/assets/night/clear.png)
+[Night-cloudy](src/assets/night/cloudy.png)
+[Night-default](src/assets/night/default.png)
+[Night-foggy](src/assets/night/foggy.png)
+[Night-rainy](src/assets/night/rainy.png)
+[Night-snowy](src/assets/night/snowy.png)
+[Night-stormy](src/assets//night/stormy.png)
 
 <!-- # React + Vite
 

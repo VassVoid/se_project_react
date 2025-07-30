@@ -29,6 +29,11 @@
   background-color: #fff;
 }
 
+.modal__close:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
 .modal__close-btn {
   width: 20px;
   height: 20px;
@@ -89,10 +94,15 @@
 .modal__submit {
   width: 124px;
   height: 36px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 1);
   color: rgba(255, 255, 255, 1);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
+}
+
+.modal__submit:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
