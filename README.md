@@ -35,7 +35,7 @@ In case you are curious about more detailed picture of how our project is, we ha
 [Link to the project in Figma](https://www.figma.com/file/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR)
 
 **Images**
-[Day-sunny](./assets/day/clear.svg)
+[Day-sunny](/src/assets/day/clear.svg)
 [Day]
 
 <!-- # React + Vite
