@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 
 import "./App.css";
-import { coordinates, APIkey } from "../../utils/constants";
+import {
+  coordinates,
+  APIkey,
+  defaultClothingItems,
+} from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -51,7 +55,7 @@ function App() {
         title="New garment"
         buttonText="Add garment"
         activeModal={activeModal}
-        OnClose={closeActiveModal}
+        onClose={closeActiveModal}
       >
         <label htmlFor="name" className="modal__label">
           Name{" "}
@@ -62,19 +66,19 @@ function App() {
             placeholder="Name"
           />
         </label>
-        <label htmlFor="imageUrl" className="modal__label">
+        <label htmlFor="Image URL" className="modal__label">
           Name{" "}
           <input
             type="url"
             className="modal__input"
-            id="imageUrl"
-            placeholder="Image Url"
+            id="Image URL"
+            placeholder="Image URL"
           />
         </label>
         <fieldset className="modal__radio-buttons">
           <legend className="modal__legend">Select the weather type:</legend>
           <label htmlFor="hot" className="modal__label modal__label_type_radio">
-            <input type="radio" className="modal__radio-input" /> Hot
+            <input type="radio" id="hot" className="modal__radio-input" /> Hot
           </label>
           <label
             htmlFor="warm"
@@ -93,7 +97,7 @@ function App() {
       <ItemModal
         activeModal={activeModal}
         card={selectedCard}
-        OnClose={closeActiveModal}
+        onClose={closeActiveModal}
         closeButton={closeActiveModal}
       />
     </div>
@@ -101,10 +105,3 @@ function App() {
 }
 
 export default App;
-
-//  border: none;
-//   position: absolute;
-//   width: 20px; ido love not typing or anythi but it does feel nice to type because why
-//   height: 20px;
-//   top: 0px;
-//   right: 0px;

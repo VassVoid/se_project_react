@@ -54,6 +54,11 @@ Nighttime Images
 [Night-snowy](src/assets/night/snowy.png)
 [Night-stormy](src/assets//night/stormy.png)
 
+Other
+[Avatar-image](/src/assets/avatar.svg)
+[Close-button](/src/assets/close-button.svg)
+[Logo](/src/assets/logo.svg)
+
 <!-- # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
