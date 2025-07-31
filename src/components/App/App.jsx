@@ -19,7 +19,7 @@ function App() {
     temp: { F: 999, C: 999 },
     city: "",
   });
-  const [activeModal, setActiveModal] = useState("");
+  const [activeModal, setActiveModal] = useState(defaultClothingItems);
   const [selectedCard, setSelectedCard] = useState({});
 
   const handleCardClick = (card) => {
