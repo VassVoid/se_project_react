@@ -19,7 +19,7 @@ function App() {
     temp: { F: 999, C: 999 },
     city: "",
   });
-  const [activeModal, setActiveModal] = useState(defaultClothingItems);
+  const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
 
   const handleCardClick = (card) => {
@@ -29,12 +29,29 @@ function App() {
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
+    console.log("activeModal is now:", activeModal);
+    console.log("handleAddClick was called!");
   };
 
   const closeActiveModal = () => {
     setActiveModal("");
   };
 
+  useEffect(() => {
+    if (!activeModal) return;
+
+    const handleEscClose = (e) => {
+      if (e.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscClose);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [activeModal]);
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -55,6 +72,7 @@ function App() {
         title="New garment"
         buttonText="Add garment"
         activeModal={activeModal}
+        isOpen={"add-garment" === activeModal}
         onClose={closeActiveModal}
       >
         <label htmlFor="name" className="modal__label">
@@ -66,31 +84,53 @@ function App() {
             placeholder="Name"
           />
         </label>
-        <label htmlFor="Image URL" className="modal__label">
-          Name{" "}
+        <label htmlFor="imageUrl" className="modal__label">
+          Image URL
           <input
             type="url"
             className="modal__input"
-            id="Image URL"
+            id="imageUrl"
             placeholder="Image URL"
           />
         </label>
         <fieldset className="modal__radio-buttons">
           <legend className="modal__legend">Select the weather type:</legend>
           <label htmlFor="hot" className="modal__label modal__label_type_radio">
-            <input type="radio" id="hot" className="modal__radio-input" /> Hot
+            <input
+              name="temperature"
+              type="radio"
+              id="hot"
+              className="modal__radio-input"
+            />{" "}
+            Hot
+            {/* All 3 radio buttons should not be checked simultaneously. When you
+            click on a radio button, the other checked button should be
+            unchecked. You can achieve it with the same name attribute for all 3
+            radio buttons. See an example of this mistake: */}
           </label>
           <label
             htmlFor="warm"
             className="modal__label modal__label_type_radio"
           >
-            <input type="radio" className="modal__radio-input" /> Warm
+            <input
+              name="temperature"
+              id="warm"
+              type="radio"
+              className="modal__radio-input"
+            />{" "}
+            Warm
           </label>
           <label
             htmlFor="cold"
             className="modal__label modal__label_type_radio"
           >
-            <input type="radio" className="modal__radio-input" /> Cold
+            <input
+              name="temperature"
+              id="cold"
+              type="radio"
+              className="modal__radio-input"
+            />{" "}
+            Cold
           </label>
         </fieldset>
       </ModalWithForm>
