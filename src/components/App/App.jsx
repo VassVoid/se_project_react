@@ -29,8 +29,6 @@ function App() {
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
-    console.log("activeModal is now:", activeModal);
-    console.log("handleAddClick was called!");
   };
 
   const closeActiveModal = () => {
