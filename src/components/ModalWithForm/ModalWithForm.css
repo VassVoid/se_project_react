@@ -52,6 +52,7 @@
   box-sizing: border-box;
   width: 100%;
   height: 436px;
+  border-radius: 16px;
 }
 
 .modal__form {
