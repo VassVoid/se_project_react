@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 32px 40px 28px;
+  padding-bottom: 28px;
   width: 1360px;
 }
 
@@ -18,11 +18,8 @@
 }
 
 .header__add-clothes-btn {
-  margin: 0 20px 0 auto;
+  margin: 0 20px 0 0;
   padding: 0;
-
-  top: 20px;
-  left: 20px;
   border: none;
   color: rgba(0, 0, 0, 1);
   background: none;

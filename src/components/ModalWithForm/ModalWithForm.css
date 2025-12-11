@@ -110,3 +110,34 @@
   cursor: pointer;
   opacity: 0.6;
 }
+
+/* Add these styles to your existing ModalWithForm.css */
+
+/* Error message styling */
+.modal__error {
+  display: block;
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+/* Disabled submit button styling */
+.modal__submit_disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.modal__submit_disabled:hover {
+  background-color: inherit; /* Prevent hover effect when disabled */
+}
+
+/* Optional: Add styling for invalid inputs */
+.modal__input:invalid:not(:placeholder-shown) {
+  border-color: #ff0000;
+}
+
+/* Optional: Add styling for valid inputs */
+.modal__input:valid:not(:placeholder-shown) {
+  border-color: #00aa00;
+}
