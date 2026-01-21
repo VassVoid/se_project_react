@@ -3,7 +3,7 @@ import "./Main.css";
 import "../../vendor/fonts.css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
-import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnit";
+import CurrentTemperatureUnitContext from "../../hooks/CurrentTemperatureUnit";
 
 // A temporary helper function to use until you locate/import yours:
 const getWhetherType = (temperature) => {
