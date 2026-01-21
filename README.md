@@ -46,7 +46,7 @@ Daytime Images
 [Day-stormy](src/assets/day/stormy.png)
 
 Nighttime Images
-[Night-clear](src/assets/night/clear.png)
+[Night-clear](src/assets/night/clear.png)add -A
 [Night-cloudy](src/assets/night/cloudy.png)
 [Night-default](src/assets/night/default.png)
 [Night-foggy](src/assets/night/foggy.png)
@@ -58,6 +58,11 @@ Other
 [Avatar-image](/src/assets/avatar.svg)
 [Close-button](/src/assets/close-button.svg)
 [Logo](/src/assets/logo.svg)
+
+## Project Pitch Video
+
+Check out [this video](https://drive.google.com/file/d/1LBOC6UOPgnhavko6k5WrduMLDFu_iWSZ/view?usp=sharing), where I describe my
+project and some challenges I faced while building it.
 
 <!-- # React + Vite
 
