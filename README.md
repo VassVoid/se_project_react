@@ -1,4 +1,4 @@
-**# Project 10: WTWR**
+**# Project 11: WTWR**
 
 **# Description**
 The WTWR is web application for checking the weather and temperature in your area. Additionaly it also provies recommendations on what clothing you should wear based on their given conditions.
