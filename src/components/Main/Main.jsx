@@ -3,7 +3,7 @@ import "./Main.css";
 import "../../vendor/fonts.css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
-import currentTemperatureUnitContext from "../contexts/CurrentTemperatureUnit";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnit";
 
 // A temporary helper function to use until you locate/import yours:
 const getWhetherType = (temperature) => {
@@ -17,14 +17,14 @@ const getWhetherType = (temperature) => {
 };
 
 function Main({ weatherData, handleCardClick, clothingItems }) {
-  const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext); // 1. FILTERING INPUT: Always use the Fahrenheit value (.F) from the state for consistent filtering
+  const { CurrentTemperatureUnit } = useContext(CurrentTemperatureUnitContext); // 1. FILTERING INPUT: Always use the Fahrenheit value (.F) from the state for consistent filtering
 
   const tempInFahrenheit = weatherData.temp.F; // 2. FILTERING OUTPUT: Convert the consistent Fahrenheit value to the weather category string
 
   const weatherType = getWhetherType(tempInFahrenheit);
 
   // 3. DISPLAY INPUT: Use the user's selected unit for presentation
-  const displayTemp = weatherData.temp[currentTemperatureUnit];
+  const displayTemp = weatherData.temp[CurrentTemperatureUnit];
 
   return (
     <main>
@@ -32,7 +32,7 @@ function Main({ weatherData, handleCardClick, clothingItems }) {
       <section className="cards">
         {" "}
         <p className="cards__text">
-          Today is {displayTemp}°{currentTemperatureUnit} / You may want to
+          Today is {displayTemp}°{CurrentTemperatureUnit} / You may want to
           wear:{" "}
         </p>{" "}
         <ul className="cards__list">

@@ -11,7 +11,7 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import ItemModal from "../ItemModal/ItemModal";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
-import currentTemperatureUnitContext from "../contexts/CurrentTemperatureUnit";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnit";
 import { getItems, addItem, deleteItem } from "../../utils/api";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
 
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [CurrentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [cardToDelete, setCardToDelete] = useState(null);
 
@@ -40,7 +40,7 @@ function App() {
     deleteItem(cardToDelete._id)
       .then(() => {
         setClothingItems((prev) =>
-          prev.filter((i) => i._id !== cardToDelete._id)
+          prev.filter((i) => i._id !== cardToDelete._id),
         );
         setCardToDelete(null);
         closeActiveModal();
@@ -54,7 +54,7 @@ function App() {
   };
 
   const handleToggleSwitchChange = () => {
-    setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
+    setCurrentTemperatureUnit(CurrentTemperatureUnit === "F" ? "C" : "F");
   };
 
   const handleAddClick = () => {
@@ -121,8 +121,8 @@ function App() {
   }, []);
 
   return (
-    <currentTemperatureUnitContext.Provider
-      value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+    <CurrentTemperatureUnitContext.Provider
+      value={{ CurrentTemperatureUnit, handleToggleSwitchChange }}
     >
       <div className="page">
         <div className="page__content">
@@ -169,7 +169,7 @@ function App() {
           itemName={cardToDelete?.name}
         />
       </div>
-    </currentTemperatureUnitContext.Provider>
+    </CurrentTemperatureUnitContext.Provider>
   );
 }
 
