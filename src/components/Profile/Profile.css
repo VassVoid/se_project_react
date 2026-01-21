@@ -1,0 +1,23 @@
+.profile {
+  display: flex;
+  gap: 120px;
+  padding: 40px 40px 85px;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.profile__sidebar {
+  flex-shrink: 0;
+}
+
+.profile__clothing-items {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+  }
+}

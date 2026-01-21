@@ -1,0 +1,59 @@
+.modal__content_type_confirm {
+  padding: 32px;
+  width: 670px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.modal__title {
+  margin: 0 0 12px;
+  font-family: "Cabinet Grotesk", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.modal__subtitle {
+  margin: 0 0 32px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.modal__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.modal__button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.modal__button:hover {
+  opacity: 0.6;
+}
+
+.modal__button_type_cancel {
+  background: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.modal__button_type_confirm {
+  color: #ff4d4d;
+  background: #fff;
+}

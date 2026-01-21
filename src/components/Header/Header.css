@@ -9,6 +9,17 @@
   margin-right: 24px;
 }
 
+.header__logo:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.header__user-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
 .header__date-and-location {
   margin: 0;
   font-weight: 700;
@@ -48,4 +59,9 @@
   font-size: 20px;
   line-height: 100%;
   letter-spacing: 0%;
+}
+
+.header__username:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
