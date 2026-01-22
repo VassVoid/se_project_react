@@ -3,9 +3,8 @@ import "./Main.css";
 import "../../vendor/fonts.css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
-import currentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit"; // ← FIXED: correct path and name
+import currentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit";
 
-// A temporary helper function to use until you locate/import yours:
 const getWeatherType = (temperature) => {
   if (temperature >= 86) {
     return "hot";
@@ -17,16 +16,13 @@ const getWeatherType = (temperature) => {
 };
 
 function Main({ weatherData, handleCardClick, clothingItems }) {
-  const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext); // ← FIXED: use lowercase variable
+  const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
 
-  // 1. FILTERING INPUT: Always use the Fahrenheit value (.F) from the state for consistent filtering
   const tempInFahrenheit = weatherData.temp.F;
 
-  // 2. FILTERING OUTPUT: Convert the consistent Fahrenheit value to the weather category string
   const weatherType = getWeatherType(tempInFahrenheit);
 
-  // 3. DISPLAY INPUT: Use the user's selected unit for presentation
-  const displayTemp = weatherData.temp[currentTemperatureUnit]; // ← FIXED: use the value, not the context
+  const displayTemp = weatherData.temp[currentTemperatureUnit];
 
   return (
     <main>
@@ -34,7 +30,7 @@ function Main({ weatherData, handleCardClick, clothingItems }) {
       <section className="cards">
         <p className="cards__text">
           Today is {displayTemp}°{currentTemperatureUnit} / You may want to
-          wear: {/* ← FIXED */}
+          wear:
         </p>
         <ul className="cards__list">
           {clothingItems
