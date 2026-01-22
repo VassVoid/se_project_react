@@ -3,10 +3,10 @@ import "./Main.css";
 import "../../vendor/fonts.css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
-import CurrentTemperatureUnitContext from "../../hooks/CurrentTemperatureUnit";
+import currentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit"; // ← FIXED: correct path and name
 
 // A temporary helper function to use until you locate/import yours:
-const getWhetherType = (temperature) => {
+const getWeatherType = (temperature) => {
   if (temperature >= 86) {
     return "hot";
   } else if (temperature >= 66 && temperature <= 85) {
@@ -17,26 +17,26 @@ const getWhetherType = (temperature) => {
 };
 
 function Main({ weatherData, handleCardClick, clothingItems }) {
-  const { CurrentTemperatureUnit } = useContext(CurrentTemperatureUnitContext); // 1. FILTERING INPUT: Always use the Fahrenheit value (.F) from the state for consistent filtering
+  const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext); // ← FIXED: use lowercase variable
 
-  const tempInFahrenheit = weatherData.temp.F; // 2. FILTERING OUTPUT: Convert the consistent Fahrenheit value to the weather category string
+  // 1. FILTERING INPUT: Always use the Fahrenheit value (.F) from the state for consistent filtering
+  const tempInFahrenheit = weatherData.temp.F;
 
-  const weatherType = getWhetherType(tempInFahrenheit);
+  // 2. FILTERING OUTPUT: Convert the consistent Fahrenheit value to the weather category string
+  const weatherType = getWeatherType(tempInFahrenheit);
 
   // 3. DISPLAY INPUT: Use the user's selected unit for presentation
-  const displayTemp = weatherData.temp[CurrentTemperatureUnit];
+  const displayTemp = weatherData.temp[currentTemperatureUnit]; // ← FIXED: use the value, not the context
 
   return (
     <main>
-      <WeatherCard weatherData={weatherData} />{" "}
+      <WeatherCard weatherData={weatherData} />
       <section className="cards">
-        {" "}
         <p className="cards__text">
-          Today is {displayTemp}°{CurrentTemperatureUnit} / You may want to
-          wear:{" "}
-        </p>{" "}
+          Today is {displayTemp}°{currentTemperatureUnit} / You may want to
+          wear: {/* ← FIXED */}
+        </p>
         <ul className="cards__list">
-          {" "}
           {clothingItems
             .filter((item) => {
               return item.weather === weatherType;
@@ -49,9 +49,9 @@ function Main({ weatherData, handleCardClick, clothingItems }) {
                   onCardClick={handleCardClick}
                 />
               );
-            })}{" "}
-        </ul>{" "}
-      </section>{" "}
+            })}
+        </ul>
+      </section>
     </main>
   );
 }

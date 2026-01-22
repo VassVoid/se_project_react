@@ -1,20 +1,30 @@
-const base = "http://localhost:3002";
+const base = "http://localhost:3001";
 
-export const getItems = () =>
-  fetch(`${base}/items`).then((r) => (r.ok ? r.json() : Promise.reject()));
+const checkResponse = (res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error: ${res.status}`);
+};
 
-export const addItem = ({ name, imageUrl, weather }) =>
-  fetch(`${base}/items`, {
+export const getItems = () => {
+  return fetch(`${base}/items`).then(checkResponse);
+};
+
+export const addItem = ({ name, imageUrl, weather }) => {
+  return fetch(`${base}/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name,
-      link: imageUrl, // ← This line converts imageUrl to link automatically
+      link: imageUrl,
       weather,
     }),
-  }).then((r) => (r.ok ? r.json() : Promise.reject()));
+  }).then(checkResponse);
+};
 
-export const deleteItem = (_id) =>
-  fetch(`${base}/items/${_id}`, { method: "DELETE" }).then((r) =>
-    r.ok ? r.json() : Promise.reject()
-  );
+export const deleteItem = (_id) => {
+  return fetch(`${base}/items/${_id}`, {
+    method: "DELETE",
+  }).then(checkResponse);
+};
