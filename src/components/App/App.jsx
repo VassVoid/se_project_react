@@ -27,13 +27,11 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [cardToDelete, setCardToDelete] = useState(null);
 
-  // Open the confirmation modal
   const handleDeleteClick = (card) => {
     setCardToDelete(card);
     setActiveModal("delete-confirm");
   };
 
-  // Actually delete the card after confirmation
   const handleConfirmDelete = () => {
     if (!cardToDelete) return;
 

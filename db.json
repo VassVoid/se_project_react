@@ -52,12 +52,6 @@
       "name": "Chicken",
       "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sneakers.png",
       "weather": "cold",
-      "_id": 13
-    },
-    {
-      "name": "Chicken",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sneakers.png",
-      "weather": "cold",
       "_id": 14
     }
   ]
